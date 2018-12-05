@@ -1,0 +1,26 @@
+package com.absa.pageObjectModel;
+import org.openqa.selenium.By;
+
+public class UserDetailsPage {	
+
+	public static By  userlistTable = By.xpath("/html/body/table");
+	
+	public static By  clickAddUser = By.xpath("/html/body/table/thead/tr[2]/td/button");
+	
+	public static By  addUserDialogDisplayed = By.xpath("/html/body/div[3]/div[1]/h3");
+	
+	public static By  firstName = By.xpath("/html/body/div[3]/div[2]/form/table/tbody/tr[1]/td[2]/input");
+	
+	public static By  lastName = By.xpath("/html/body/div[3]/div[2]/form/table/tbody/tr[2]/td[2]/input");
+	
+	public static By  userName = By.xpath("/html/body/div[3]/div[2]/form/table/tbody/tr[3]/td[2]/input");
+	public static By  password = By.xpath("/html/body/div[3]/div[2]/form/table/tbody/tr[4]/td[2]/input");
+	public static By  companyACustomerType = By.xpath("/html/body/div[3]/div[2]/form/table/tbody/tr[5]/td[2]/label[1]/input");
+	public static By  companyBCustomerType = By.xpath("/html/body/div[3]/div[2]/form/table/tbody/tr[5]/td[2]/label[2]/input");
+	
+	public static By  role = By.xpath("/html/body/div[3]/div[2]/form/table/tbody/tr[6]/td[2]/select");
+	public static By  email = By.xpath("/html/body/div[3]/div[2]/form/table/tbody/tr[7]/td[2]/input");
+	public static By  cellNumber = By.xpath("/html/body/div[3]/div[2]/form/table/tbody/tr[8]/td[2]/input");
+	public static By  saveUser = By.xpath("/html/body/div[3]/div[3]/button[2]");
+	
+}

@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "1e312173-33a6-4936-9a78-fa6ffc67c5de",
+		"name": "DogAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Of All Breedz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/list/all",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"list",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify Retriever",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3a2ab6f9-9711-4feb-8a19-88d86fbcd9e9",
+						"exec": [
+							"pm.test(\"Verify - Retriever is within list\",function(){",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.retriever).to.eql(\"retriever\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/list/all",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"list",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retriever Sub Breeds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dog.ceo/api/breed/retriever/list",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breed",
+						"retriever",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Random image ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://images.dog.ceo/breeds/retriever-golden/n02099601_7019.jpg",
+					"protocol": "https",
+					"host": [
+						"images",
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"breeds",
+						"retriever-golden",
+						"n02099601_7019.jpg"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

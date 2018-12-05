@@ -1,0 +1,11 @@
+package com.absa.pageObjectModel;
+import org.openqa.selenium.By;
+
+public class UserDetailsPage {	
+
+	public static By  userlistTable = By.xpath("/html/body/table");
+	
+	public static By  clickAddUser = By.xpath("/html/body/table/thead/tr[2]/td/button");
+	
+	public static By  addUserDialogDisplayed = By.xpath("/html/body/div[3]/div[1]/h3");
+}

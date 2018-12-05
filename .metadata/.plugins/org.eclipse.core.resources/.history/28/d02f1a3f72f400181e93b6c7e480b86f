@@ -1,0 +1,29 @@
+browser=chrome
+url=https://qa.makro.co.za/makstorefront/
+env=remote
+remote.driver.username = tawanda8
+remote.driver.automation.key = 2JhuyeKFiNoP5c8zu3xx
+remote.driver.url   = @hub-cloud.browserstack.com/wd/hub
+remote.driver.capability = SAMSUNG_GALAXY_TAB_4_CHROME
+#possible values are: mobile=(mobile,android or iOS) or desktop=(desktop,pc or mac)
+remote.driver.env = mobile
+BROWSERSTACK_LOCAL=true
+BROWSERSTACK_LOCAL_IDENTIFIER=2JhuyeKFiNoP5c8zu3xx
+
+##########################################
+########## Email settings ################
+##########################################
+email.report=test-output/emailable-report.html
+email.ccd=molise@crystalqa.com thapelo@crystalqa.com tawanda@crystalqa.com
+email.text=Find attached report.
+email.subject=Automation Results.
+##########User Details #####################
+email.user=crystalqa12@gmail.com
+email.password=crystalqa!@#
+##############SMTP settings ################
+email.smtp.port=587
+email.smtp.host=smtp.gmail.com
+email.smtp.socketFactory.port=587
+email.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
+email.smtp.starttls.enable=true
+email.smtp.auth=true

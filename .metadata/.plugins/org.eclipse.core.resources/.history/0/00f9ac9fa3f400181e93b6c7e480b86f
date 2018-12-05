@@ -1,0 +1,16 @@
+package com.absa.database.entities;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.DynamicUpdate;
+
+@Entity
+@DynamicUpdate
+@Table(name = "User")
+public class UserDetailsEntity extends BaseEntity implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+
+}

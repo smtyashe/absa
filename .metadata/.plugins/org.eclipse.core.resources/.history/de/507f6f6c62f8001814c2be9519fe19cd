@@ -1,0 +1,70 @@
+package com.absa.utilities;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebElement;
+
+import com.absa.database.entities.UserDetailsEntity;
+import com.absa.pageObjectModel.UserDetailsPage;
+
+public class UserDetailsUtil extends BaseUtil {
+
+	  private boolean acceptNextAlert = true;
+	  private StringBuffer verificationErrors = new StringBuffer();
+
+	public static String navigateUserTable() {
+		
+		return controller.getElement(UserDetailsPage.userlistTable).getText();
+	}
+
+	public static void populateUserDetails(UserDetailsEntity userDetailsEntity) {
+
+		controller.getElement(UserDetailsPage.firstName).clear();
+		controller.getElement(UserDetailsPage.firstName).sendKeys(userDetailsEntity.getFirstaName());
+		
+		controller.getElement(UserDetailsPage.lastName).clear();
+		controller.getElement(UserDetailsPage.lastName).sendKeys(userDetailsEntity.getLastName());
+
+		controller.getElement(UserDetailsPage.userName).clear();
+		controller.getElement(UserDetailsPage.userName).sendKeys(userDetailsEntity.getUserName());
+
+		controller.getElement(UserDetailsPage.password).clear();
+		controller.getElement(UserDetailsPage.password).sendKeys(userDetailsEntity.getPassword());
+
+		((WebElement) controller.getElements(UserDetailsPage.role)).sendKeys(userDetailsEntity.getRole());
+		controller.getElement(UserDetailsPage.email).sendKeys(userDetailsEntity.getEmail());
+
+		controller.getElement(UserDetailsPage.cellNumber).sendKeys(userDetailsEntity.getCellNumber());
+		controller.getElement(UserDetailsPage.firstName).sendKeys(userDetailsEntity.getFirstaName());
+
+	}
+	
+	public static void selectCustomer() {
+		controller.getElement(UserDetailsPage.companyACustomerType).click();
+	}
+
+	 private boolean isAlertPresent() {
+		    try {
+		      controller,getdr.switchTo().alert();
+		      return true;
+		    } catch (NoAlertPresentException e) {
+		      return false;
+		    }
+		  }
+
+		  private String closeAlertAndGetItsText() {
+		    try {
+		      Alert alert = driver.switchTo().alert();
+		      String alertText = alert.getText();
+		      if (acceptNextAlert) {
+		        alert.accept();
+		      } else {
+		        alert.dismiss();
+		      }
+		      return alertText;
+		    } finally {
+		      acceptNextAlert = true;
+		    }
+		  }
+
+}

@@ -1,0 +1,29 @@
+package com.absa.test;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.absa.utilities.BaseMethods;
+
+public class AddUserTest  extends BaseMethods{
+	
+	@BeforeMethod
+	public void initialiseTests() {
+		initialise();
+	}
+	
+	@Test
+	public void navigateToTableList() {
+		
+	}
+    
+	
+	@AfterMethod
+	public void exitBrowser() {
+		{
+			driver.quit();
+			driver = null;
+		}
+	}
+}

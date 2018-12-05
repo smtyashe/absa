@@ -1,0 +1,67 @@
+using System;
+
+using System.Collections.Generic;
+
+using Newtonsoft.Json;
+
+using RestSharp;
+
+ 
+
+namespace Sibu
+
+{
+
+    class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            var client = new RestClient {BaseUrl = new Uri("https://dog.ceo/")};
+
+            var request = new RestRequest("api/breeds/list/all", Method.GET) {RequestFormat = DataFormat.Json};
+
+            var response = client.Execute(request);
+
+ 
+
+            ResultModel model = JsonConvert.DeserializeObject<ResultModel>(response.Content);
+
+ 
+
+            if (model.message.ContainsKey("retriever"))
+
+            {
+
+                Console.WriteLine("Yes");
+
+            }
+
+            else
+
+            {
+
+                Console.WriteLine("No");
+
+            }
+
+        }
+
+ 
+
+        public class ResultModel
+
+        {
+
+            public Dictionary<string, List<string>> message { get; set; }
+
+            public string status { get; set; }
+
+        }
+
+    }
+
+}

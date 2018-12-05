@@ -1,0 +1,3 @@
+title	firstName	lastName	mobileNumber	emailAddress	dob	currentPassword	newPassword	testType
+Mr	Sibusiso	Dlomo	0835857224	sibulele@crystalqa.com	17 June 1966	sibulele@crystalqa	sibulele@crystalqa	positive
+M5	855	54545	hhhhhhh	kk522.	166	sibulele@crystalqa	sibulele	negative

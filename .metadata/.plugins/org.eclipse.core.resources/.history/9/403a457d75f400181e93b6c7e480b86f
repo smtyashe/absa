@@ -1,0 +1,12 @@
+package com.absa.database.entities;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import org.hibernate.annotations.DynamicUpdate;
+
+@Entity
+@DynamicUpdate
+@Table(name = "User")
+public class UserLoginEntity {
+
+}

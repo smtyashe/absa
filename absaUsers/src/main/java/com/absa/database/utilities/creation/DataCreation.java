@@ -1,0 +1,87 @@
+package com.absa.database.utilities.creation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.absa.database.DatabaseManagement;
+import com.absa.database.entities.BaseEntity;
+import com.absa.database.entities.UserDetailsEntity;
+
+public abstract class DataCreation {
+	
+	protected BaseEntity  [] entities = {new UserDetailsEntity()};
+	protected DatabaseManagement databaseManagement;
+	
+	public DataCreation()
+	{
+		databaseManagement = new DatabaseManagement();
+	}
+	
+	public DatabaseManagement getDatabaseManagement() {
+		return databaseManagement;
+	}
+
+	public void clearData()
+	{
+		for(int index = 0; index < entities.length;index++)
+		{
+			databaseManagement.clearAllEntityData(entities[index]);
+		}
+	}
+	
+	public void saveData()
+	{
+		for(int index = 0; index < entities.length;index++)
+		{
+			List<? extends BaseEntity> entityCollection  = getEntitiesFromSource(entities[index]);
+			persitEntities(entityCollection);
+		}
+	}
+	
+	protected void persitEntities(List<? extends BaseEntity> entityCollection)
+	{
+		databaseManagement.persistEntityCollection(entityCollection);
+	}
+	
+	protected List<? extends BaseEntity> getEntitiesFromSource(BaseEntity entity) {
+		switch(entity.getClass().getSimpleName())
+		{
+			case "ContactUsEntity":
+				return getEmployerEntityData();
+				
+			case "EmployerEntity":
+				return getContactUsEntityData();
+				
+			case "UserEntity":
+				return getUserEntityData();
+				
+			case "SearchEntity":
+				return getSearchEntityData();
+				
+		}
+		return new ArrayList<BaseEntity>();
+	}
+	
+	protected List<? extends BaseEntity> getEntitiesFromSource(String source) {
+		return null;
+	}
+	
+	protected List <? extends BaseEntity> getUserEntityData()
+	{
+		return null;
+	}
+	protected  List <? extends BaseEntity> getContactUsEntityData()
+	{
+		return null;
+	}
+	protected  List <? extends BaseEntity> getEmployerEntityData()
+	{
+		return null;
+	}
+	
+	protected  List <? extends BaseEntity> getSearchEntityData()
+	{
+		return null;
+	}
+
+}

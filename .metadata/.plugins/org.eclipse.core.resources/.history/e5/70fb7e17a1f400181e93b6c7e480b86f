@@ -1,0 +1,17 @@
+package com.absa.utilities;
+
+import com.absa.database.entities.UserDetailsEntity;
+
+public class UserDetailsUtil  extends BaseUtil {
+	
+	public static void navigateUserTable() {
+		
+		
+	}
+	
+	public static void populateUserDetails(UserDetailsEntity userDetailsEntity) {
+		
+		
+	}
+
+}
