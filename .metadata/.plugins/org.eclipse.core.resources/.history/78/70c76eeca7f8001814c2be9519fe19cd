@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.absa.database.entities.BaseEntity;
 import com.absa.database.entities.UserDetailsEntity;
 import com.absa.database.utilities.retrieval.DataRetrieval;
 import com.absa.utilities.BaseMethods;
@@ -21,6 +22,14 @@ public class AddUserTest extends BaseMethods {
 		initialise();
 	}
 
+	@Test
+	public void navigateToTableList() {
+
+		
+
+		assertEquals("User List Table", table);
+
+	}
 
 	@Test
 	public void addUserTest() {

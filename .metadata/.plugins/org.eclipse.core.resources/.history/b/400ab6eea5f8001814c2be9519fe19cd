@@ -46,12 +46,6 @@ public class UserDetailsUtil extends BaseUtil {
 		controller.getElement(UserDetailsPage.optionRadios).click();
 		controller.getElement(UserDetailsPage.optionRadios).sendKeys(name);
 	}
-	
-public static void clickAddUsers() {
-		
-		controller.getElement(UserDetailsPage.clickAddUser).click();
-	}
-
 	public static void saveData() {
 		
 		controller.getElement(UserDetailsPage.saveUser).click();

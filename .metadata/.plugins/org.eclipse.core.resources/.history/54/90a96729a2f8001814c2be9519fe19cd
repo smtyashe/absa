@@ -3,8 +3,6 @@ package com.absa.test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import java.util.List;
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -21,32 +19,27 @@ public class AddUserTest extends BaseMethods {
 		initialise();
 	}
 
+	@Test
+	public void navigateToTableList() {
+
+		String table = UserDetailsUtil.navigateUserTable();
+
+		assertEquals("User List Table", table);
+
+	}
 
 	@Test
 	public void addUserTest() {
 
-		String table = UserDetailsUtil.navigateUserTable();
-		@SuppressWarnings("unchecked")
-		List <UserDetailsEntity> userDetailsEntities = (List<UserDetailsEntity>) DataRetrieval.getInstance().getAllPositiveData(UserDetailsEntity.class);
-		String preivous = "";
-		for (UserDetailsEntity userDetailsEntity : userDetailsEntities) {
-			UserDetailsUtil.clickAddUsers();
-			if (preivous !=userDetailsEntity.getFirstaName()) {
-				
-			}
-			UserDetailsUtil.populateUserDetails(userDetailsEntity);
-			UserDetailsUtil.saveData();
-			preivous =userDetailsEntity.getFirstaName();
-			
+		UserDetailsEntity userDetailsEntity = (UserDetailsEntity) DataRetrieval.getInstance()
+				.getPositiveData(new UserDetailsEntity());
 
-			assertTrue(UserDetailsUtil.isAlertPresent());
+		currentTestData.add(userDetailsEntity);
 
-		}
-		
-		assertEquals("User List Table", table);
-		
-	
+		UserDetailsUtil.populateUserDetails(userDetailsEntity);
+		UserDetailsUtil.selectCustomerAAA();
 
+		assertTrue(UserDetailsUtil.isAlertPresent());
 	}
 
 	@AfterMethod
