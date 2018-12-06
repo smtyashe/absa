@@ -8,7 +8,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
 @DynamicUpdate
-@Table(name = "User")
+@Table(name = "UserDetails")
 public class UserDetailsEntity extends BaseEntity implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -51,8 +51,8 @@ public class UserDetailsEntity extends BaseEntity implements Serializable{
 		return customer;
 	}
 
-	public  void setCutsomer(String cutsomer) {
-		this.customer = cutsomer;
+	public  void setCustomer(String customer) {
+		this.customer = customer;
 	}
 
 	public  String getRole() {
